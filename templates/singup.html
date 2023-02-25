@@ -1,0 +1,47 @@
+{% extends 'home.html' %}
+{% block body %}
+<form method="POST" action="/">
+    {% csrf_token %}
+<body class="main-bg">
+    <div class="login-container text-c animated flipInX">
+            <div>
+                <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
+            </div>
+                <h3 class="text-whitesmoke">Welcome</h3>
+                <h5><p class="text-whitesmoke">Register</p></h5>
+            <div class="container-content">
+                <form class="margin-t">
+                    <div class="form-group">
+                        <input name="username" type="text" class="form-control" placeholder="Username" required="">
+                    </div>
+                    <div class="form-group my-2">
+                        <input name="name" type="text" class="form-control" placeholder="Full Name" required="">
+                    </div>
+                    <div class="form-group my-2">
+                        <input name="email" type="email" class="form-control" placeholder="E-mail" required="">
+                    </div>
+                    <div class="form-group my-2">
+                        <input name="password" type="password" class="form-control" placeholder="Enter password" required="">
+                    </div>
+                    <div class="form-group my-2">
+                        <input name="confirm_password" type="password" class="form-control" placeholder="Confirm Password" required="">
+                    </div>
+                    <button type="submit" class="form-button button-l margin-b my-1">Register</button>
+    
+                    {% comment %} <a class="text-darkyellow" href="#"><small>Forgot your password?</small></a> {% endcomment %}
+                    <p class="text-whitesmoke text-center my-1"><small>Have an account?</small></p>
+                    <a class="text-darkyellow" href="\home"><small>Sign In</small></a>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-danger" role="alert">
+                                {{message}}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </form>
+                <p class="margin-t text-whitesmoke"><small> RUSHAN SHAIKH &copy; 2023</small> </p>
+            </div>
+        </div>
+</body>
+
+{% endblock body %}
