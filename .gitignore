@@ -1,4 +1,8 @@
-
+authlogin
+home
+templates
+requirements.txt
+requirements
 env
 .env
 __pycache__
